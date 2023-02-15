@@ -1,12 +1,16 @@
 import { Box } from "@mui/material";
-import { Header } from "../Header";
-
-import React from "react";
+import { Navbar } from "../Navbar";
+import { Card } from "../Card";
+import { useState } from "react";
 
 const Main = () => {
+  const [page, setPage] = useState(1);
+  const [character, setCharacter] = useState("");
+
   return (
-    <Box sx={{ backgroundColor: "silver", height: "100vh" }}>
-      <Header />
+    <Box>
+      <Navbar setCharacter={setCharacter} setPage={setPage} />
+      <Card page={page} setPage={setPage} character={character} />
     </Box>
   );
 };
